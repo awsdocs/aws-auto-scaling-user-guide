@@ -16,7 +16,7 @@ You can also use wildcards\. For example, use `autoscaling-plans:*` to specify a
 "Action": "autoscaling-plans:*"
 ```
 
-Use `Describe:*` to specify all actions whose names start with `Describe`\.
+Use `Describe*` to specify all actions whose names start with `Describe`\.
 
 ```
 "Action": "autoscaling-plans:Describe*"
