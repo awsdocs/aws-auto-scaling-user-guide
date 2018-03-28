@@ -1,6 +1,6 @@
 # Authentication and Access Control for AWS Auto Scaling<a name="auth-and-access-control"></a>
 
-By default, IAM users don't have permission to create or modify AWS resources\. To grant IAM users permission to create or modify AWS resources, you must create policies using AWS Identity and Access Management \(IAM\)\. IAM policies grant permissions to specific resources and API actions\. You attach am IAM policy to the IAM users or groups that require the permissions it grants\. For more information, see [Access Management](http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\.
+By default, IAM users don't have permission to create or modify AWS resources\. To grant IAM users permission to create or modify AWS resources, you must create policies using AWS Identity and Access Management \(IAM\)\. IAM policies grant permissions to specific resources and API actions\. You attach an IAM policy to the IAM users or groups that require the permissions it grants\. For more information, see [Access Management](http://docs.aws.amazon.com/IAM/latest/UserGuide/access.html) in the *IAM User Guide*\.
 
 ## AWS Auto Scaling Actions<a name="aws-auto-scaling-actions"></a>
 
