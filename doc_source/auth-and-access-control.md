@@ -30,7 +30,7 @@ When writing an IAM policy to control access to AWS Auto Scaling actions, you mu
 
 ## AWS Auto Scaling Keys<a name="aws-autoscaling-keys"></a>
 
-For a list of context keys supported by each AWS service and a list of AWS\-wide policy keys, see [AWS Service Actions and Condition Context Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actionsconditions.html) and [Global and IAM Condition Context Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) in the *IAM User Guide*\.
+For a list of context keys supported by each AWS service and a list of AWS\-wide policy keys, see [Actions, Resources, and Condition Keys for AWS Services](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_actions-resources-contextkeys.html) and [AWS Global Condition Context Keys](http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) in the *IAM User Guide*\.
 
 ## Example Policies<a name="aws-auto-scaling-example-policies"></a>
 
@@ -58,59 +58,36 @@ To create a scaling plan, users must have permission to use the actions in the f
 Users must have additional permissions for each type of scalable resource they must add to a scaling plan\.
 
 **Auto Scaling groups**
-
 + `autoscaling:UpdateAutoScalingGroups`
-
 + `autoscaling:DescribeAutoScalingGroups`
-
 + `autoscaling:PutScalingPolicy`
-
 + `autoscaling:DescribePolicies`
-
 + `autoscaling:DeletePolicy`
 
 **Resource types other than Auto Scaling groups**
-
 + `application-autoscaling:RegisterScalableTarget`
-
 + `application-autoscaling:DescribeScalableTargets`
-
 + `application-autoscaling:DeregisterScalableTarget`
-
 + `application-autoscaling:PutScalingPolicy`
-
 + `application-autoscaling:DescribeScalingPolicies`
-
 + `application-autoscaling:DeleteScalingPolicy`
-
 + `iam:CreateServiceLinkedRole`
 
 **ECS services**
-
 + `ecs:DescribeServices`
-
 + `ecs:UpdateServices`
 
 **Spot Fleet requests**
-
 + `ec2:DescribeSpotFleetRequests`
-
 + `ec2:ModifySpotFleetRequest`
 
 **DynamoDB tables or global indexes**
-
 + `dynamodb:DescribeTable`
-
 + `dynamodb:UpdateTable`
 
 **Aurora DB clusters**
-
 + `rds:AddTagsToResource`
-
 + `rds:CreateDBInstance`
-
 + `rds:DeleteDBInstance`
-
 + `rds:DescribeDBClusters`
-
 + `rds:DescribeDBInstances`
