@@ -4,5 +4,7 @@ The following table describes important additions to the AWS Auto Scaling docume
 
 | Change | Description | Date | 
 | --- |--- |--- |
-| Tags as an application source | This release adds support for specifying a set of tags as an application source\. | April 23, 2018 | 
-| New service | Initial release of AWS Auto Scaling\. | January 16, 2018 | 
+| [Predictive scaling and enhancements ](#auto-scaling-doc-history) | You can now use predictive scaling to proactively scale your Amazon EC2 Auto Scaling groups\. This release also adds support for replacing scaling policies created outside of the scaling plan \(such as from other consoles\) and controlling whether you enable your plan's dynamic scaling feature\. For more information, see [Getting Started with AWS Auto Scaling](https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-getting-started.html)\. | November 20, 2018 | 
+| [Support for custom resource settings](#auto-scaling-doc-history) | Added support for customizing various settings for each individual resource or multiple resources at the same time\. For more information, see [Getting Started with AWS Auto Scaling](https://docs.aws.amazon.com/autoscaling/plans/userguide/auto-scaling-getting-started.html)\. | October 9, 2018 | 
+| [Tags as an application source](#auto-scaling-doc-history) | This release adds support for specifying a set of tags as an application source\. | April 23, 2018 | 
+| [New service](#auto-scaling-doc-history) | Initial release of AWS Auto Scaling\. | January 16, 2018 | 
