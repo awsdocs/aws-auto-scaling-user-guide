@@ -6,7 +6,7 @@ With AWS Auto Scaling, you configure and manage scaling for your resources throu
 
 AWS Auto Scaling is useful for applications that experience daily or weekly variations in traffic flow, including the following:
 + Cyclical traffic such as high use of resources during regular business hours and low use of resources overnight
-+ On and off traffic patterns, such as batch processing, testing, or periodic analysis
++ On and off workload patterns, such as batch processing, testing, or periodic analysis
 + Variable traffic patterns, such as marketing campaigns with periods of spiky growth
 
 ## Features of AWS Auto Scaling<a name="scalable-resources"></a>

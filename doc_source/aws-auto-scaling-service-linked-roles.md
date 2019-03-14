@@ -35,7 +35,7 @@ With the `AWSServiceRoleForAutoScalingPlans_EC2AutoScaling` role created by AWS 
 
 ## Delete the Service\-Linked Roles<a name="delete-service-linked-role"></a>
 
-If you no longer use AWS Auto Scaling, we recommend that you delete the service\-linked role\. You can delete a service\-linked role only after first deleting the related AWS resources\. If a service\-linked role is used with multiple scaling plans, you must delete all scaling plans with predictive scaling enabled before you can delete the role\. This protects your scaling plans because you cannot inadvertently remove permissions to manage them\. For more information, see [Delete Your Scaling Plan](gs-delete-scaling-plan.md)\.
+If you no longer use AWS Auto Scaling, we recommend that you delete the service\-linked role\. You can delete a service\-linked role only after first deleting the related AWS resources\. If a service\-linked role is used with multiple scaling plans, you must delete all scaling plans with predictive scaling enabled before you can delete the role\. This protects your scaling plans because you cannot inadvertently remove permissions to manage them\. For more information, see [Step 5: Clean Up](gs-delete-scaling-plan.md)\.
 
 You can use IAM to delete the service\-linked role\. For more information, see [Deleting a Service\-Linked Role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
 

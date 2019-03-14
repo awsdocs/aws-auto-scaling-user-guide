@@ -1,7 +1,7 @@
 # AWS Auto Scaling User Guide
 
 -----
-*****Copyright &copy; 2018 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
+*****Copyright &copy; 2019 Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
 Amazon's trademarks and trade dress may not be used in 
@@ -21,7 +21,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Step 2: Specify the Scaling Strategy](gs-configure-scaling-plan.md)
    + [Step 3: Configure Advanced Settings (Optional)](gs-specify-custom-settings.md)
    + [Step 4: Create Your Scaling Plan](gs-create-scaling-plan.md)
-   + [Delete Your Scaling Plan](gs-delete-scaling-plan.md)
+   + [Step 5: Clean Up](gs-delete-scaling-plan.md)
    + [Getting Started with Customized Metrics](gs-customized-metric-specification.md)
 + [Authentication and Access Control for AWS Auto Scaling](auth-and-access-control.md)
    + [Service-Linked Roles for AWS Auto Scaling](aws-auto-scaling-service-linked-roles.md)
