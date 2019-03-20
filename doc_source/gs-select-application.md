@@ -2,7 +2,7 @@
 
 In the Getting Started section, you create a scaling plan and get a hands\-on introduction to using AWS Auto Scaling through the AWS Management Console\. The Getting Started walkthrough focuses on the most straightforward configuration for a scaling plan\. It also describes the Create Scaling Plan wizard and all of the ways that you can use it to configure a scaling plan\. 
 
-The first step in the wizard asks you to find your scalable resources\. There are two ways to locate the resources for a new scaling plan\.
+The first step in the wizard asks you to find your scalable resources\. There are two ways to locate the resources for a new scaling plan:
 + You specify an application source \(an AWS CloudFormation stack or a set of tags\) for AWS Auto Scaling to use to automatically discover your scalable resources\. As you define your scaling plan, you can then choose which of these resources to include or exclude\. 
 + Alternatively, you can choose one or more Auto Scaling groups of Amazon EC2 instances to use in your scaling plan\.
 
