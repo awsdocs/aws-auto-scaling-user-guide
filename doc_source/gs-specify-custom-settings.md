@@ -37,9 +37,9 @@ When you use predictive scaling, you can optionally choose a different maximum c
 
 AWS Auto Scaling provides the most commonly used metrics for automatic scaling\. However, depending on your needs, you might prefer to get data from different metrics instead of the metrics in the console\. Amazon CloudWatch has many different metrics to choose from\. CloudWatch also lets you publish your own metrics\. 
 
-This topic covers using JSON to specify a customized metric for your scaling plan\. Before you follow these instructions, we recommend that you become familiar with the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
+You use JSON to specify a CloudWatch customized metric\. Before you follow these instructions, we recommend that you become familiar with the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
 
-To use a customized metric for scaling, you construct a JSON\-formatted payload using a set of required parameters from a template\. You add the values for each parameter from CloudWatch\. We provide the template as part of the custom options for **Scaling metric** and **Load metric** in the advanced settings of your scaling plan\. 
+To specify a customized metric, you construct a JSON\-formatted payload using a set of required parameters from a template\. You add the values for each parameter from CloudWatch\. We provide the template as part of the custom options for **Scaling metric** and **Load metric** in the advanced settings of your scaling plan\. 
 
 JSON represents data in two ways:
 + An *object*, which is an unordered collection of name\-value pairs\. An object is defined within left \(\{\) and right \(\}\) braces\. Each name\-value pair begins with the name, followed by a colon, followed by the value\. Name\-value pairs are comma\-separated\. 
@@ -75,7 +75,7 @@ Use this procedure to view and customize the settings for the target tracking sc
    + **Replace external scaling policies**—If this setting is cleared, it keeps existing scaling policies created from outside of this scaling plan, and does not create new ones\. 
    + **Disable scale\-in**—If this setting is cleared, automatic scale\-in to decrease the current capacity of the resource is allowed when the specified metric is below the target value\. 
    + **Cooldown**—Creates scale\-out and scale\-in cooldown periods\. Cooldown periods are the amount of time after a scale\-out or scale\-in activity completes before another activity can start\. The intention is to give newly provisioned resources time to start handling demand before triggering a new scaling action\. This setting is not available if the resource is an Auto Scaling group\. For more information, see [Cooldown Period](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown) in the *Application Auto Scaling User Guide*\. 
-   + **Instance warmup**—\[Auto Scaling groups only\] Allows you to control the amount of time that elapses before a newly launched instance begins contributing to the CloudWatch metrics\. For more information, see [Instance Warmup](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html#as-target-tracking-scaling-warmup) in the *Amazon EC2 Auto Scaling User Guide*\.
+   + **Instance warmup**—\[Auto Scaling groups only\] Controls the amount of time that elapses before a newly launched instance begins contributing to the CloudWatch metrics\. For more information, see [Instance Warmup](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html#as-target-tracking-scaling-warmup) in the *Amazon EC2 Auto Scaling User Guide*\.
 
 ## Predictive Scaling Settings<a name="gs-customize-predictive-scaling"></a>
 
@@ -92,7 +92,7 @@ If your resource is an Auto Scaling group, use this procedure to view and custom
      + **Enforce the maximum capacity setting**—AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity\. The maximum capacity is enforced as a hard limit\. 
      + **Set the maximum capacity to equal forecast capacity**—AWS Auto Scaling can scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity\.
      + **Increase maximum capacity above forecast capacity**—AWS Auto Scaling can scale resource capacity higher than the maximum capacity by a specified buffer value\. The intention is to give the target tracking scaling policy extra capacity if unexpected traffic occurs\. 
-   + **Max capacity behavior buffer**—If you chose **Increase maximum capacity above forecast capacity**, choose the size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity\. The value is specified as a percentage relative to the forecast capacity\. For example, if the buffer is 10, this means a 10 percent buffer\. With a 10 percent buffer, if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55\. 
+   + **Max capacity behavior buffer**—If you chose **Increase maximum capacity above forecast capacity**, choose the size of the capacity buffer to use when the forecast capacity is close to or exceeds the maximum capacity\. The value is specified as a percentage relative to the forecast capacity\. For example, with a 10 percent buffer, if the forecast capacity is 50, and the maximum capacity is 40, then the effective maximum capacity is 55\. 
 
 1. When you are finished customizing settings, choose **Next**\.
 **Note**  
