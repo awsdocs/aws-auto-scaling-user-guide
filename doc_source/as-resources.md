@@ -4,6 +4,10 @@ The following related resources can help you as you work with this service\.
 + **[AWS Auto Scaling](https://aws.amazon.com/autoscaling/)** – The primary web page for information about AWS Auto Scaling\.
 + **[AWS Auto Scaling FAQ](https://aws.amazon.com/autoscaling/faqs/)** – The answers to questions customers ask about AWS Auto Scaling\.
 + **[AWS Auto Scaling Discussion Forum](https://forums.aws.amazon.com/forum.jspa?forumID=291)** – Get help from the community\.
++ **[Tagging Auto Scaling Groups and Instances](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html)** – Get information about tagging your Auto Scaling groups\.
++ **[Tagging for DynamoDB](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Tagging.html)** – Get information about tagging your Amazon DynamoDB tables or global secondary indexes\.
++ **[Tagging Amazon RDS Resources](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html)** – Get information about tagging your Aurora DB clusters\.
++ **[Working with Tag Editor](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html)** – Get information about using Tag Editor, including which resources Tag Editor supports\.
 + **[Target Tracking Scaling Policies](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html)** for Amazon EC2 Auto Scaling – Get information about target tracking scaling policies for Amazon EC2 Auto Scaling groups\.
 + **[Target Tracking Scaling Policies](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html) ** for all other resources – Get information about target tracking scaling policies for resources beyond Amazon EC2, such as DynamoDB indexes and tables and Amazon ECS services\. 
 + **[AWS Auto Scaling API and CLI Reference Guides](https://docs.aws.amazon.com/autoscaling/)** – Documentation for the API calls and the AWS CLI commands that you can use to create, modify, and delete Auto Scaling plans\.

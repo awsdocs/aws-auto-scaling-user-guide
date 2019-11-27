@@ -51,7 +51,7 @@ Here is an example of the JSON template with sample values for each parameter:
  {
    "MetricName": "MyBackendCPU",
    "Namespace": "MyNamespace",
-   "Diminesions": [
+   "Dimensions": [
      {
        "Name": "MyOptionalMetricDimensionName",
        "Value": "MyOptionalMetricDimensionValue"
@@ -87,7 +87,7 @@ If your resource is an Auto Scaling group, use this procedure to view and custom
 
 1. You can make choices for the following items\. For this tutorial, change the **Predictive scaling mode** to **Forecast only**\.
    + **Predictive scaling mode**—Specifies the scaling mode\. The default is **Forecast and scale**\. If you change it to **Forecast only**, the scaling plan forecasts future capacity but doesn't apply the scaling actions\.
-   + **Pre\-launch instances**—Adjusts the scaling actions to run earlier when scaling out\. For example, the forecast says to add capacity at 10:00 AM, and the buffer time is 5 minutes \(300 seconds\)\. The run time of the corresponding scaling action is then 9:55 AM\. This is helpful for Auto Scaling groups, where it can take a few minutes from the time an instance launches until it comes in service\. The actual time can vary as it depends on several factors, such as the size of the instance and whether there are startup scripts to complete\. The default is 300 seconds\.
+   + **Pre\-launch instances**—Adjusts the scaling actions to run earlier when scaling out\. For example, the forecast says to add capacity at 10:00 AM, and the buffer time is 5 minutes \(300 seconds\)\. The runtime of the corresponding scaling action is then 9:55 AM\. This is helpful for Auto Scaling groups, where it can take a few minutes from the time an instance launches until it comes in service\. The actual time can vary as it depends on several factors, such as the size of the instance and whether there are startup scripts to complete\. The default is 300 seconds\.
    + **Max capacity behavior**—Controls whether the selected resource can scale up above the maximum capacity when the forecast capacity is close to or exceeds the currently specified maximum capacity\. The default is **Enforce the maximum capacity setting**\. 
      + **Enforce the maximum capacity setting**—AWS Auto Scaling cannot scale resource capacity higher than the maximum capacity\. The maximum capacity is enforced as a hard limit\. 
      + **Set the maximum capacity to equal forecast capacity**—AWS Auto Scaling can scale resource capacity higher than the maximum capacity to equal but not exceed forecast capacity\.

@@ -25,6 +25,7 @@ Amazon's trademarks and trade dress may not be used in
    + [Step 5: Clean Up](gs-delete-scaling-plan.md)
 + [Authentication and Access Control for AWS Auto Scaling](auth-and-access-control.md)
    + [Service-Linked Roles for AWS Auto Scaling](aws-auto-scaling-service-linked-roles.md)
++ [AWS Auto Scaling and Interface VPC Endpoints](aws-auto-scaling-vpc-endpoints.md)
 + [AWS Auto Scaling Limits](auto-scaling-limits.md)
 + [AWS Auto Scaling Resources](as-resources.md)
 + [Document History](auto-scaling-doc-history.md)

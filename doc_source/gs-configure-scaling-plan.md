@@ -18,7 +18,7 @@ For the beginner tutorial, complete only the first step of the following procedu
 
 **To specify scaling strategies**
 
-1. On the **Specify scaling strategy** page, for **Scaling plan details**, **Name**, type a name for your scaling plan\. The name of your scaling plan must be unique within your set of scaling plans for the region, can have a maximum of 128 characters, and must not contain pipes "\|", forward slashes "/", or colons ":"\.
+1. On the **Specify scaling strategy** page, for **Scaling plan details**, **Name**, enter a name for your scaling plan\. The name of your scaling plan must be unique within your set of scaling plans for the AWS Region, can have a maximum of 128 characters, and must not contain pipes "\|", forward slashes "/", or colons ":"\.
 
 1. For each type of resource, provide the following scaling instructions\. 
 
