@@ -125,7 +125,7 @@ Users must have additional permissions for each type of resource they must add t
 
 **ECS services**
 + `ecs:DescribeServices`
-+ `ecs:UpdateServices`
++ `ecs:UpdateService`
 
 **Spot Fleet requests**
 + `ec2:DescribeSpotFleetRequests`
