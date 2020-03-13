@@ -25,9 +25,9 @@ For a beginner\-friendly tutorial, you can start more simply by choosing an Auto
 
 ## Prerequisites<a name="gs-select-application-prereq"></a>
 
-Before you begin, use the Amazon EC2 console to create a new Auto Scaling group by following the steps for [Creating an Auto Scaling Group Using a Launch Template](https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-launch-template.html) in the *Amazon EC2 Auto Scaling User Guide*\. You can choose any group, but let's use a new group for this tutorial, so that you can delete it afterwards\. As soon as the group is deleted, you stop incurring charges for the Amazon EC2 instances it ran\.
+Before you begin, use the Amazon EC2 console to create a new Auto Scaling group by following the steps for [Getting Started with Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/GettingStartedTutorial.html) in the *Amazon EC2 Auto Scaling User Guide*\. You can choose any group, but let's use a new group for this tutorial, so that you can delete it afterwards\. As soon as the group is deleted, you stop incurring charges for the Amazon EC2 instances it ran\.
 
-You need IAM permissions to create a scaling plan and to enable predictive scaling\. For information about the required IAM permissions, see the [Example Policies](auth-and-access-control.md#aws-auto-scaling-example-policies) in this guide\.
+You need IAM permissions to create a scaling plan and to enable predictive scaling\. For information about the required IAM permissions, see the [AWS Auto Scaling Identity\-Based Policy Examples](security_iam_id-based-policy-examples.md) in this guide\.
 
 ## Discovering or Choosing Your Scalable Resources<a name="gs-choose-discovery-method"></a>
 

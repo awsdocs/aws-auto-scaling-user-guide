@@ -2,7 +2,7 @@
 
 Use the following procedure to specify scaling strategies for the resources that were found in the previous step\. 
 
-For each type of resource, AWS Auto Scaling chooses the metric that is most commonly used for determining how much of the resource is in use at any given time\. You choose the most appropriate scaling strategy to optimize performance of your application based on this metric\. When you enable the dynamic scaling feature and the predictive scaling feature, the scaling strategy is shared between them\. For more information, see [How AWS Auto Scaling Works](how-it-works.md)\.
+For each type of resource, AWS Auto Scaling chooses the metric that is most commonly used for determining how much of the resource is in use at any given time\. You choose the most appropriate scaling strategy to optimize performance of your application based on this metric\. When you enable the dynamic scaling feature and the predictive scaling feature, the scaling strategy is shared between them\. For more information, see [How Scaling Plans Work](how-it-works.md)\.
 
 The following scaling strategies are available:
 + **Optimize for availability**—AWS Auto Scaling scales the resource out and in automatically to maintain resource utilization at 40 percent\. This option is useful when your application has urgent and sometimes unpredictable scaling needs\.

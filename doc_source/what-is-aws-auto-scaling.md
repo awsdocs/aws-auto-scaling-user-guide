@@ -36,9 +36,9 @@ AWS Auto Scaling features are enabled by Amazon CloudWatch metrics and alarms\. 
 ## How to Get Started<a name="how-to-get-started"></a>
 
 For an introduction to AWS Auto Scaling, we recommend that you familiarize yourself with the following: 
-+ [How AWS Auto Scaling Works](how-it-works.md)—This introduces the concepts of scaling strategies, dynamic scaling, and predictive scaling to help you get familiar with AWS Auto Scaling\.
++ [How Scaling Plans Work](how-it-works.md)—This introduces the concepts of scaling strategies, dynamic scaling, and predictive scaling to help you get familiar with AWS Auto Scaling\.
 + [AWS Auto Scaling FAQs](https://aws.amazon.com/autoscaling/faqs/)—The FAQ on the product page provides information about the benefits of this service\.
-+ [AWS Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/rande.html#autoscaling_region) in the *AWS General Reference*—This page shows you the Regional availability of AWS Auto Scaling and other AWS services\. 
++ [AWS Auto Scaling Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/autoscaling_region.html) in the *AWS General Reference*—This page shows you the Regional availability of AWS Auto Scaling\. 
 + [Amazon EC2 Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/ec2/userguide/)—This guide shows you how to create and manage the Auto Scaling groups to use when scaling your fleet of Amazon EC2 instances\.
 + [Application Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/application/userguide/)—This guide provides you with topics and resources related to automatic scaling of resources beyond Amazon EC2\. Whenever you need more information specific to scaling an individual scalable resource or service other than Amazon EC2, you can access the technical documentation from this guide\.
 

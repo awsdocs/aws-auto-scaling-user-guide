@@ -12,9 +12,9 @@ Before you create a scaling plan for use with your application, review your appl
 The better you understand your application, the more effective you can make your scaling plan\. 
 
 **Topics**
-+ [Best Practices for AWS Auto Scaling](gs-best-practices.md)
 + [Step 1: Find Your Scalable Resources](gs-select-application.md)
 + [Step 2: Specify the Scaling Strategy](gs-configure-scaling-plan.md)
 + [Step 3: Configure Advanced Settings \(Optional\)](gs-specify-custom-settings.md)
 + [Step 4: Create Your Scaling Plan](gs-create-scaling-plan.md)
 + [Step 5: Clean Up](gs-delete-scaling-plan.md)
++ [Step 6: Next Steps](gs-next-steps.md)

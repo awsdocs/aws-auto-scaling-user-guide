@@ -5,14 +5,12 @@ You can establish a private connection between your virtual private cloud \(VPC\
 Interface VPC endpoints are powered by AWS PrivateLink, a feature that enables private communication between AWS services using private IP addresses\. For more information, see [AWS PrivateLink](https://aws.amazon.com/privatelink)\.
 
 **Note**  
-You must explicitly enable each API that you want to access through an interface VCP endpoint\. For example, you might need to also configure an interface VPC endpoint for `autoscaling.region.amazonaws.com` if you're using the Amazon EC2 Auto Scaling API operations\. For more information, see [Amazon EC2 Auto Scaling and Interface VPC Endpoints](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-vpc-endpoints) in the *Amazon EC2 Auto Scaling User Guide*\.
-
-AWS Auto Scaling currently supports VPC endpoints in all Regions except China \(Beijing\) and China \(Ningxia\)\.
+You must explicitly enable each API that you want to access through an interface VPC endpoint\. For example, you might need to also configure an interface VPC endpoint for `autoscaling.region.amazonaws.com` if you're using the Amazon EC2 Auto Scaling API operations\. For more information, see [Amazon EC2 Auto Scaling and Interface VPC Endpoints](https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-vpc-endpoints) in the *Amazon EC2 Auto Scaling User Guide*\.
 
 ## Create an Interface VPC Endpoint<a name="create-vpce-aws-as"></a>
 
 Create an endpoint for AWS Auto Scaling using the following service name:
-+ **com\.amazonaws\.*region*\.autoscaling\-plans**  — Creates an endpoint for the AWS Auto Scaling API operations\.
++ **com\.amazonaws\.*region*\.autoscaling\-plans** — Creates an endpoint for the AWS Auto Scaling API operations\.
 
 For more information, see [Creating an Interface Endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#create-interface-endpoint) in the *Amazon VPC User Guide*\. 
 
