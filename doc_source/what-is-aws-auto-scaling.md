@@ -1,8 +1,8 @@
-# What Is AWS Auto Scaling?<a name="what-is-aws-auto-scaling"></a>
+# What is AWS Auto Scaling?<a name="what-is-aws-auto-scaling"></a>
 
 AWS Auto Scaling enables you to configure automatic scaling for the AWS resources that are part of your application in a matter of minutes\. The AWS Auto Scaling console provides a single user interface to use the automatic scaling features of multiple AWS services\. You can configure automatic scaling for individual resources or for whole applications\. 
 
-With AWS Auto Scaling, you configure and manage scaling for your resources through a scaling plan\. The scaling plan uses dynamic scaling and predictive scaling to automatically scale your application’s resources\. This ensures that you add the required computing power to handle the load on your application and then remove it when it's no longer required\. The scaling plan lets you choose scaling strategies to define how to optimize your resource utilization\. You can optimize for availability, for cost, or a balance of both\. Alternatively, you can create custom scaling strategies\. 
+With AWS Auto Scaling, you configure and manage scaling for your resources through a scaling plan\. The scaling plan uses dynamic scaling and predictive scaling to automatically scale your application's resources\. This ensures that you add the required computing power to handle the load on your application and then remove it when it's no longer required\. The scaling plan lets you choose scaling strategies to define how to optimize your resource utilization\. You can optimize for availability, for cost, or a balance of both\. Alternatively, you can create custom scaling strategies\. 
 
 AWS Auto Scaling is useful for applications that experience daily or weekly variations in traffic flow, including the following:
 + Cyclical traffic such as high use of resources during regular business hours and low use of resources overnight
@@ -33,18 +33,18 @@ Currently, predictive scaling is only available for Amazon EC2 Auto Scaling grou
 
 AWS Auto Scaling features are enabled by Amazon CloudWatch metrics and alarms\. The features are provided at no additional charge beyond the service fees for CloudWatch and the other AWS resources that you use\.
 
-## How to Get Started<a name="how-to-get-started"></a>
+## How to get started<a name="how-to-get-started"></a>
 
 For an introduction to AWS Auto Scaling, we recommend that you familiarize yourself with the following: 
-+ [How Scaling Plans Work](how-it-works.md)—This introduces the concepts of scaling strategies, dynamic scaling, and predictive scaling to help you get familiar with AWS Auto Scaling\.
++ [How scaling plans work](how-it-works.md)—This introduces the concepts of scaling strategies, dynamic scaling, and predictive scaling to help you get familiar with AWS Auto Scaling\.
 + [AWS Auto Scaling FAQs](https://aws.amazon.com/autoscaling/faqs/)—The FAQ on the product page provides information about the benefits of this service\.
-+ [AWS Auto Scaling Regions and Endpoints](https://docs.aws.amazon.com/general/latest/gr/autoscaling_region.html) in the *AWS General Reference*—This page shows you the Regional availability of AWS Auto Scaling\. 
++ [Regions and endpoints](https://docs.aws.amazon.com/general/latest/gr/autoscaling_region.html) in the *AWS General Reference*—This table shows you the regional availability of AWS Auto Scaling\. 
 + [Amazon EC2 Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/ec2/userguide/)—This guide shows you how to create and manage the Auto Scaling groups to use when scaling your fleet of Amazon EC2 instances\.
 + [Application Auto Scaling User Guide](https://docs.aws.amazon.com/autoscaling/application/userguide/)—This guide provides you with topics and resources related to automatic scaling of resources beyond Amazon EC2\. Whenever you need more information specific to scaling an individual scalable resource or service other than Amazon EC2, you can access the technical documentation from this guide\.
 
-To get started, complete the getting started tutorial for AWS Auto Scaling in [Getting Started with AWS Auto Scaling](auto-scaling-getting-started.md)\.
+To get started, complete the getting started tutorial for AWS Auto Scaling in [Getting started with AWS Auto Scaling](auto-scaling-getting-started.md)\.
 
-## Related Services<a name="related-services"></a>
+## Related services<a name="related-services"></a>
 
 [AWS CloudFormation](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/) allows you to use templates, which are formatted text files in JSON or YAML, to model and provision a collection of related AWS resources\. You can use AWS CloudFormation sample templates or create your own templates to create the AWS resources, and any associated dependencies or runtime parameters, required to run your application\. You can also create templates of scaling plans using AWS CloudFormation\.
 

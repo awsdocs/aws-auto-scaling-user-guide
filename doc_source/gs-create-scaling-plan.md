@@ -1,4 +1,4 @@
-# Step 4: Create Your Scaling Plan<a name="gs-create-scaling-plan"></a>
+# Step 4: Create your scaling plan<a name="gs-create-scaling-plan"></a>
 
 On the **Review and create** page, review the details of your scaling plan and choose **Create scaling plan**\. You are directed to a page that shows the status of your scaling plan\. The scaling plan can take a moment to finish being created while your resources are updated\. 
 
@@ -6,7 +6,7 @@ With predictive scaling, AWS Auto Scaling analyzes the history of the specified 
 
 After the creation of the scaling plan is complete, view the scaling plan details by choosing its name from the **Scaling plans** screen\. 
 
-## \(Optional\) View Scaling Information for a Resource<a name="gs-view-resource"></a>
+## \(Optional\) View scaling information for a resource<a name="gs-view-resource"></a>
 
 Use this procedure to view the scaling information created for a resource\. 
 
@@ -23,7 +23,7 @@ Data is presented in the following ways:
 
 1. On the **Scaling plan details** page, choose the resource to view\. 
 
-### Monitoring and Evaluating Forecasts<a name="gs-monitoring-forecasts"></a>
+### Monitoring and evaluating forecasts<a name="gs-monitoring-forecasts"></a>
 
 When your scaling plan is up and running, you can monitor the load forecast, the capacity forecast, and scaling actions to examine the performance of predictive scaling\. All of this data is available in the AWS Auto Scaling console for all Auto Scaling groups that are enabled for predictive scaling\. Keep in mind that your scaling plan requires at least 24 hours of historical load data to make the initial forecast\.
 
@@ -35,6 +35,6 @@ AWS Auto Scaling learns from your data automatically\. First, it makes a load fo
 
 When evaluating how well predictive scaling performs, monitor how closely the actual and forecast values match *over time*\. When you create a scaling plan, AWS Auto Scaling provides graphs based on the most recent actual data\. It also provides an initial forecast for the next 48 hours\. However, when the scaling plan is created, there is very little forecast data to compare the actual data to\. Wait until the scaling plan has obtained forecast values for a few periods before comparing the historical forecast values against the actual values\. After a few days of daily forecasts, you'll have a larger sample of forecast values to compare with actual values\. 
 
-For patterns that occur on a daily basis, the time interval between creating your scaling plan and evaluating the forecast effectiveness can be as short as a few days\. However, this length of time is insufficient to evaluate the forecast based on a recent pattern change\. For example, let’s say you are looking at the forecast for an Auto Scaling group that started a new marketing campaign in the past week\. The campaign significantly increases your web traffic for the same two days each week\. In situations like this, we recommend waiting for the group to collect a full week or two of new data before evaluating the effectiveness of the forecast\. The same recommendation applies for a brand new Auto Scaling group that has only started to collect metric data\. 
+For patterns that occur on a daily basis, the time interval between creating your scaling plan and evaluating the forecast effectiveness can be as short as a few days\. However, this length of time is insufficient to evaluate the forecast based on a recent pattern change\. For example, let's say you are looking at the forecast for an Auto Scaling group that started a new marketing campaign in the past week\. The campaign significantly increases your web traffic for the same two days each week\. In situations like this, we recommend waiting for the group to collect a full week or two of new data before evaluating the effectiveness of the forecast\. The same recommendation applies for a brand new Auto Scaling group that has only started to collect metric data\. 
 
 If the actual and forecast values don't match after monitoring them over an appropriate length of time, you should also consider your choice of load metric\. To be effective, the load metric must represent a reliable and accurate measure of the total load on all instances in the Auto Scaling group\. The load metric is core to predictive scaling\. If you choose a non\-optimal load metric, it can prevent predictive scaling from making accurate load and capacity forecasts and scheduling the correct capacity adjustments for your Auto Scaling group\. 

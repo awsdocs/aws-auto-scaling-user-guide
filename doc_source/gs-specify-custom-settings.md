@@ -1,4 +1,4 @@
-# Step 3: Configure Advanced Settings \(Optional\)<a name="gs-specify-custom-settings"></a>
+# Step 3: Configure advanced settings \(optional\)<a name="gs-specify-custom-settings"></a>
 
 Now that you have specified the scaling strategy to use for each resource type, you can choose to customize any of the default settings on a per resource basis using the **Configure advanced settings** step\. For each resource type, there are multiple groups of settings that you can customize\. In most cases, however, the default settings should be optimal, with the possible exception of the values for minimum capacity and maximum capacity, which should be carefully adjusted\.
 
@@ -7,7 +7,7 @@ Skip this procedure if you would like to keep the default settings\. You can cha
 **Important**  
 For the beginner tutorial, let's make a few changes to update the maximum capacity of your Auto Scaling group and enable predictive scaling in forecast only mode\. Although you do not need to customize all of the settings for the tutorial, let's also briefly examine the settings in each section\. 
 
-## General Settings<a name="gs-customize-general-scaling"></a>
+## General settings<a name="gs-customize-general-scaling"></a>
 
 Use this procedure to view and customize the settings you specified in the previous step, on a per resource basis\. You can also customize the minimum capacity and maximum capacity for each resource\. 
 
@@ -25,21 +25,21 @@ Use this procedure to view and customize the settings you specified in the previ
    + **Scaling strategy**—Allows you to optimize for availability, cost, or a balance of both, or to specify a custom strategy\.
    + **Enable dynamic scaling**—If this setting is cleared, the selected resource cannot scale using a target tracking scaling configuration\.
    + **Enable predictive scaling**—\[Auto Scaling groups only\] If this setting is cleared, the selected group cannot scale using predictive scaling\.
-   + **Scaling metric**—Specifies the scaling metric to use\. If you choose **Custom**, you can specify a customized scaling metric to use instead of the scaling metrics that are available in the console\. For more information, see the next topic in this section\.
+   + **Scaling metric**—Specifies the scaling metric to use\. If you choose **Custom**, you can specify a custom metric to use instead of the predefined metrics that are available in the console\. For more information, see the next topic in this section\.
    + **Target value**—Specifies the target utilization value to use\.
-   + **Load metric**—\[Auto Scaling groups only\] Specifies the load metric to use\. If you choose **Custom**, you can specify a customized load metric to use instead of the load metrics that are available in the console\. For more information, see the next topic in this section\.
+   + **Load metric**—\[Auto Scaling groups only\] Specifies the load metric to use\. If you choose **Custom**, you can specify a custom metric to use instead of the predefined metrics that are available in the console\. For more information, see the next topic in this section\.
    + **Minimum capacity**—Specifies the minimum capacity for the resource\. AWS Auto Scaling ensures that your resource never goes below this size\.
    + **Maximum capacity**—Specifies the maximum capacity for the resource\. AWS Auto Scaling ensures that your resource never goes above this size\. 
 **Note**  
 When you use predictive scaling, you can optionally choose a different maximum capacity behavior to use based on the forecast capacity\. This setting is in the **Predictive scaling settings** section\.
 
-### Customized Metrics Specification<a name="gs-customized-metric-specification"></a>
+### Custom metrics<a name="gs-customized-metric-specification"></a>
 
 AWS Auto Scaling provides the most commonly used metrics for automatic scaling\. However, depending on your needs, you might prefer to get data from different metrics instead of the metrics in the console\. Amazon CloudWatch has many different metrics to choose from\. CloudWatch also lets you publish your own metrics\. 
 
-You use JSON to specify a CloudWatch customized metric\. Before you follow these instructions, we recommend that you become familiar with the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
+You use JSON to specify a CloudWatch custom metric\. Before you follow these instructions, we recommend that you become familiar with the [Amazon CloudWatch User Guide](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/)\.
 
-To specify a customized metric, you construct a JSON\-formatted payload using a set of required parameters from a template\. You add the values for each parameter from CloudWatch\. We provide the template as part of the custom options for **Scaling metric** and **Load metric** in the advanced settings of your scaling plan\. 
+To specify a custom metric, you construct a JSON\-formatted payload using a set of required parameters from a template\. You add the values for each parameter from CloudWatch\. We provide the template as part of the custom options for **Scaling metric** and **Load metric** in the advanced settings of your scaling plan\. 
 
 JSON represents data in two ways:
 + An *object*, which is an unordered collection of name\-value pairs\. An object is defined within left \(\{\) and right \(\}\) braces\. Each name\-value pair begins with the name, followed by a colon, followed by the value\. Name\-value pairs are comma\-separated\. 
@@ -61,9 +61,9 @@ Here is an example of the JSON template with sample values for each parameter:
  }
 ```
 
-For more information, see [Customized Scaling Metric Specification](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CustomizedScalingMetricSpecification.html) and [Customized Load Metric Specification](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CustomizedLoadMetricSpecification.html) in the *AWS Auto Scaling API Reference*\.
+For more information, see [Customized scaling metric specification](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CustomizedScalingMetricSpecification.html) and [Customized load metric specification](https://docs.aws.amazon.com/autoscaling/plans/APIReference/API_CustomizedLoadMetricSpecification.html) in the *AWS Auto Scaling API Reference*\.
 
-## Dynamic Scaling Settings<a name="gs-customize-dynamic-scaling"></a>
+## Dynamic scaling settings<a name="gs-customize-dynamic-scaling"></a>
 
 Use this procedure to view and customize the settings for the target tracking scaling policy that AWS Auto Scaling creates\. 
 
@@ -74,10 +74,10 @@ Use this procedure to view and customize the settings for the target tracking sc
 1. You can make choices for the following items\. However, the default settings are fine for this tutorial\. 
    + **Replace external scaling policies**—If this setting is cleared, it keeps existing scaling policies created from outside of this scaling plan, and does not create new ones\. 
    + **Disable scale\-in**—If this setting is cleared, automatic scale\-in to decrease the current capacity of the resource is allowed when the specified metric is below the target value\. 
-   + **Cooldown**—Creates scale\-out and scale\-in cooldown periods\. Cooldown periods are the amount of time after a scale\-out or scale\-in activity completes before another activity can start\. The intention is to give newly provisioned resources time to start handling demand before triggering a new scaling action\. This setting is not available if the resource is an Auto Scaling group\. For more information, see [Cooldown Period](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown) in the *Application Auto Scaling User Guide*\. 
-   + **Instance warmup**—\[Auto Scaling groups only\] Controls the amount of time that elapses before a newly launched instance begins contributing to the CloudWatch metrics\. For more information, see [Instance Warmup](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html#as-target-tracking-scaling-warmup) in the *Amazon EC2 Auto Scaling User Guide*\.
+   + **Cooldown**—Creates scale\-out and scale\-in cooldown periods\. The cooldown period is the amount of time the scaling policy waits for a previous scaling activity to take effect\. For more information, see [Cooldown period](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html#target-tracking-cooldown) in the *Application Auto Scaling User Guide*\. \(This setting is not shown if the resource is an Auto Scaling group\.\) 
+   + **Instance warmup**—\[Auto Scaling groups only\] Controls the amount of time that elapses before a newly launched instance begins contributing to the CloudWatch metrics\. For more information, see [Instance warmup](https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html#as-target-tracking-scaling-warmup) in the *Amazon EC2 Auto Scaling User Guide*\.
 
-## Predictive Scaling Settings<a name="gs-customize-predictive-scaling"></a>
+## Predictive scaling settings<a name="gs-customize-predictive-scaling"></a>
 
 If your resource is an Auto Scaling group, use this procedure to view and customize the settings AWS Auto Scaling uses for predictive scaling\. 
 

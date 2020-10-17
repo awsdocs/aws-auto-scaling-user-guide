@@ -1,8 +1,8 @@
-# Step 2: Specify the Scaling Strategy<a name="gs-configure-scaling-plan"></a>
+# Step 2: Specify the scaling strategy<a name="gs-configure-scaling-plan"></a>
 
 Use the following procedure to specify scaling strategies for the resources that were found in the previous step\. 
 
-For each type of resource, AWS Auto Scaling chooses the metric that is most commonly used for determining how much of the resource is in use at any given time\. You choose the most appropriate scaling strategy to optimize performance of your application based on this metric\. When you enable the dynamic scaling feature and the predictive scaling feature, the scaling strategy is shared between them\. For more information, see [How Scaling Plans Work](how-it-works.md)\.
+For each type of resource, AWS Auto Scaling chooses the metric that is most commonly used for determining how much of the resource is in use at any given time\. You choose the most appropriate scaling strategy to optimize performance of your application based on this metric\. When you enable the dynamic scaling feature and the predictive scaling feature, the scaling strategy is shared between them\. For more information, see [How scaling plans work](how-it-works.md)\.
 
 The following scaling strategies are available:
 + **Optimize for availability**—AWS Auto Scaling scales the resource out and in automatically to maintain resource utilization at 40 percent\. This option is useful when your application has urgent and sometimes unpredictable scaling needs\.
@@ -22,7 +22,8 @@ For the beginner tutorial, complete only the first step of the following procedu
 
 1. For each type of resource, provide the following scaling instructions\. 
 
-   1. For the **Scaling strategy**, choose one of these options: **Optimize for availability**, **Balance availability and cost**, **Optimize for cost**, or **Custom**\. 
+   1. For the **Scaling strategy**, choose one of these options: **Optimize for availability**, **Balance availability and cost**, **Optimize for cost**, or **Custom**\.   
+![\[Choose EC2 Auto Scaling groups\]](http://docs.aws.amazon.com/autoscaling/plans/userguide/images/aws-as-gs-choose-scaling-strategy.PNG)
 
    1. If you chose **Custom** in the previous step, choose your custom settings under **Configuration details**\. Here you can find the list of metrics available to you \(if any\) and related graphs based on data from CloudWatch\. The recent metric history is the main focus of the graphs\. 
       + For **Scaling metric**, choose the desired scaling metric\. If there are no other predefined metrics available, this option has no drop\-down list to show\. 

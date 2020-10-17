@@ -1,17 +1,17 @@
-# How AWS Auto Scaling Works with IAM<a name="security_iam_service-with-iam"></a>
+# How AWS Auto Scaling works with IAM<a name="security_iam_service-with-iam"></a>
 
-Before you use IAM to manage access to AWS Auto Scaling, you should understand what IAM features are available to use with AWS Auto Scaling\. To get a high\-level view of how AWS Auto Scaling and other AWS services work with IAM, see [AWS Services That Work with IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html) in the *IAM User Guide*\.
+Before you use IAM to manage access to AWS Auto Scaling, you should understand what IAM features are available to use with AWS Auto Scaling\. To get a high\-level view of how AWS Auto Scaling and other AWS services work with IAM, see [AWS services that work with IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html) in the *IAM User Guide*\.
 
 **Topics**
-+ [AWS Auto Scaling Identity\-Based Policies](#security_iam_service-with-iam-id-based-policies)
-+ [AWS Auto Scaling Resource\-Based Policies](#security_iam_service-with-iam-resource-based-policies)
++ [AWS Auto Scaling identity\-based policies](#security_iam_service-with-iam-id-based-policies)
++ [AWS Auto Scaling resource\-based policies](#security_iam_service-with-iam-resource-based-policies)
 + [Access Control Lists \(ACLs\)](#security_iam_service-with-iam-acls)
-+ [Authorization Based on AWS Auto Scaling Tags](#security_iam_service-with-iam-tags)
-+ [AWS Auto Scaling IAM Roles](#security_iam_service-with-iam-roles)
++ [Authorization based on AWS Auto Scaling tags](#security_iam_service-with-iam-tags)
++ [AWS Auto Scaling IAM roles](#security_iam_service-with-iam-roles)
 
-## AWS Auto Scaling Identity\-Based Policies<a name="security_iam_service-with-iam-id-based-policies"></a>
+## AWS Auto Scaling identity\-based policies<a name="security_iam_service-with-iam-id-based-policies"></a>
 
-With IAM identity\-based policies, you can specify allowed or denied actions and resources, and the conditions under which actions are allowed or denied\. AWS Auto Scaling supports specific actions, resources, and condition keys\. To learn about all of the elements that you use in a JSON policy, see [IAM JSON Policy Elements Reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html) in the *IAM User Guide*\.
+With IAM identity\-based policies, you can specify allowed or denied actions and resources, and the conditions under which actions are allowed or denied\. AWS Auto Scaling supports specific actions, resources, and condition keys\. To learn about all of the elements that you use in a JSON policy, see [IAM JSON policy elements reference](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements.html) in the *IAM User Guide*\.
 
 ### Actions<a name="security_iam_service-with-iam-id-based-policies-actions"></a>
 
@@ -41,19 +41,21 @@ The `Resource` element specifies the object or objects to which the action appli
 
 AWS Auto Scaling has no service\-defined resources that can be used as the `Resource` element of an IAM policy statement\. Therefore, there are no Amazon Resource Names \(ARNs\) for AWS Auto Scaling for you to use in an IAM policy\. To control access to AWS Auto Scaling actions, always use an \* \(asterisk\) as the resource when writing an IAM policy\. 
 
-### Condition Keys<a name="security_iam_service-with-iam-id-based-policies-conditionkeys"></a>
+### Condition keys<a name="security_iam_service-with-iam-id-based-policies-conditionkeys"></a>
 
 The `Condition` element \(or `Condition` *block*\) lets you specify conditions in which a statement is in effect\. For example, you might want a policy to be applied only after a specific date\. To express conditions, use predefined condition keys\.
 
-AWS Auto Scaling does not provide any service\-specific condition keys, but it does support using some global condition keys\. To see all AWS global condition keys, see [AWS Global Condition Context Keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) in the *IAM User Guide*\. 
+AWS Auto Scaling does not provide any service\-specific condition keys, but it does support using some global condition keys\. To see all AWS global condition keys, see [AWS global condition context keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html) in the *IAM User Guide*\. 
 
 The `Condition` element is optional\. 
 
 ### Examples<a name="security_iam_service-with-iam-id-based-policies-examples"></a>
 
-To view examples of AWS Auto Scaling identity\-based policies, see [AWS Auto Scaling Identity\-Based Policy Examples](security_iam_id-based-policy-examples.md)\.
+To view examples of AWS Auto Scaling identity\-based policies, see [AWS Auto Scaling identity\-based policy examples](security_iam_id-based-policy-examples.md)\.
 
-## AWS Auto Scaling Resource\-Based Policies<a name="security_iam_service-with-iam-resource-based-policies"></a>
+## AWS Auto Scaling resource\-based policies<a name="security_iam_service-with-iam-resource-based-policies"></a>
+
+Other AWS services, such as Amazon Simple Storage Service, support resource\-based permissions policies\. For example, you can attach a permissions policy to an S3 bucket to manage access permissions to that bucket\.
 
 AWS Auto Scaling does not support resource\-based policies\.
 
@@ -61,25 +63,32 @@ AWS Auto Scaling does not support resource\-based policies\.
 
 AWS Auto Scaling does not support Access Control Lists \(ACLs\)\.
 
-## Authorization Based on AWS Auto Scaling Tags<a name="security_iam_service-with-iam-tags"></a>
+## Authorization based on AWS Auto Scaling tags<a name="security_iam_service-with-iam-tags"></a>
 
 AWS Auto Scaling has no service\-defined resources that can be tagged\. Therefore, it does not support controlling access based on tags\.
 
-## AWS Auto Scaling IAM Roles<a name="security_iam_service-with-iam-roles"></a>
+## AWS Auto Scaling IAM roles<a name="security_iam_service-with-iam-roles"></a>
 
 An [IAM role](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) is an entity within your AWS account that has specific permissions\.
 
-### Using Temporary Credentials with AWS Auto Scaling<a name="security_iam_service-with-iam-roles-tempcreds"></a>
+### Using temporary credentials with AWS Auto Scaling<a name="security_iam_service-with-iam-roles-tempcreds"></a>
 
 You can use temporary credentials to sign in with federation, to assume an IAM role, or to assume a cross\-account role\. You obtain temporary security credentials by calling AWS STS API operations such as [AssumeRole](https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html) or [GetFederationToken](https://docs.aws.amazon.com/STS/latest/APIReference/API_GetFederationToken.html)\. 
 
 AWS Auto Scaling supports using temporary credentials\. 
 
-### Service\-Linked Roles<a name="security_iam_service-with-iam-roles-service-linked"></a>
+### Service\-linked roles<a name="security_iam_service-with-iam-roles-service-linked"></a>
 
 AWS Auto Scaling supports service\-linked roles\. 
 
-Depending on which resources you add to your scaling plan, AWS automatically creates a service\-linked role for Amazon EC2 Auto Scaling and one service\-linked role per resource type for Application Auto Scaling\. If you enable predictive scaling, AWS automatically creates the AWS Auto Scaling service\-linked role\. For more information, see [Service\-Linked Roles for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) in the *Amazon EC2 Auto Scaling User Guide*, [Service\-Linked Roles for Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html) in the *Application Auto Scaling User Guide*, and [Service\-Linked Roles for AWS Auto Scaling](aws-auto-scaling-service-linked-roles.md) in this guide\.
+Depending on which resources you add to your scaling plan, this automatically creates a service\-linked role for Amazon EC2 Auto Scaling and one service\-linked role per resource type for Application Auto Scaling\. 
+
+If you enable predictive scaling, this automatically creates the AWS Auto Scaling service\-linked role\. 
+
+For more information, see the applicable role\-specific documentation:
++ [Service\-linked roles for Amazon EC2 Auto Scaling](https://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-service-linked-role.html) in the *Amazon EC2 Auto Scaling User Guide*
++ [Service\-linked roles for Application Auto Scaling](https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-service-linked-roles.html) in the *Application Auto Scaling User Guide*
++ [AWS Auto Scaling service\-linked roles](aws-auto-scaling-service-linked-roles.md) in this guide
 
 You can use the following procedure to determine if your account already has a service\-linked role\.<a name="procedure_check_instance_role"></a>
 
@@ -89,8 +98,8 @@ You can use the following procedure to determine if your account already has a s
 
 1. In the navigation pane, choose **Roles**\. 
 
-1. Search the list for “AWSServiceRole” to find the service linked roles that exist in your account\. Look for the name of the service\-linked role that you want to check\.
+1. Search the list for "AWSServiceRole" to find the service linked roles that exist in your account\. Look for the name of the service\-linked role that you want to check\.
 
-### Service Roles<a name="security_iam_service-with-iam-roles-service"></a>
+### Service roles<a name="security_iam_service-with-iam-roles-service"></a>
 
 AWS Auto Scaling has no service roles\.
