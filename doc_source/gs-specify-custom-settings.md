@@ -1,11 +1,11 @@
 # Step 3: Configure advanced settings \(optional\)<a name="gs-specify-custom-settings"></a>
 
-Now that you have specified the scaling strategy to use for each resource type, you can choose to customize any of the default settings on a per resource basis using the **Configure advanced settings** step\. For each resource type, there are multiple groups of settings that you can customize\. In most cases, however, the default settings should be optimal, with the possible exception of the values for minimum capacity and maximum capacity, which should be carefully adjusted\.
+Now that you have specified the scaling strategy to use for each resource type, you can choose to customize any of the default settings on a per resource basis using the **Configure advanced settings** step\. For each resource type, there are multiple groups of settings that you can customize\. In most cases, however, the default settings should be more efficient, with the possible exception of the values for minimum capacity and maximum capacity, which should be carefully adjusted\.
 
 Skip this procedure if you would like to keep the default settings\. You can change these settings anytime by editing the scaling plan\.
 
 **Important**  
-For the beginner tutorial, let's make a few changes to update the maximum capacity of your Auto Scaling group and enable predictive scaling in forecast only mode\. Although you do not need to customize all of the settings for the tutorial, let's also briefly examine the settings in each section\. 
+For the introductory tutorial, let's make a few changes to update the maximum capacity of your Auto Scaling group and enable predictive scaling in forecast only mode\. Although you do not need to customize all of the settings for the tutorial, let's also briefly examine the settings in each section\. 
 
 ## General settings<a name="gs-customize-general-scaling"></a>
 

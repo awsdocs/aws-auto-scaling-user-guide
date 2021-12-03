@@ -1,38 +1,32 @@
-# AWS Auto Scaling service\-linked roles<a name="aws-auto-scaling-service-linked-roles"></a>
+# Predictive scaling service\-linked role<a name="aws-auto-scaling-service-linked-roles"></a>
 
-**Important**  
-To get complete information about the service\-linked roles that are required to use scaling plans, see [Service\-linked roles](security_iam_service-with-iam.md#security_iam_service-with-iam-roles-service-linked)\.
+AWS Auto Scaling uses service\-linked roles for the permissions that it requires to call other AWS on your behalf when you work with a scaling plan\. For more information, see [Service\-linked roles for scaling plans](security_iam_service-with-iam.md#security_iam_service-with-iam-roles-service-linked)\.
 
-AWS Auto Scaling uses service\-linked roles for the permissions that it requires to call other AWS services on your behalf\. A service\-linked role is a unique type of AWS Identity and Access Management \(IAM\) role that is linked directly to an AWS service\.
-
-Service\-linked roles provide a secure way to delegate permissions to AWS services because only the linked service can assume a service\-linked role\. For more information, see [Using service\-linked roles](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html) in the *IAM User Guide*\.
-
-The following sections describe how to create and manage the AWS Auto Scaling service\-linked role\. Start by configuring permissions to allow an IAM entity \(such as a user, group, or role\) to create, edit, or delete a service\-linked role\.
+The following sections describe how to create and manage the service\-linked role for predictive scaling\. Start by configuring permissions to allow an IAM entity \(such as a user, group, or role\) to create, edit, or delete a service\-linked role\.
 
 ## Permissions granted by the service\-linked role<a name="service-linked-role-permissions"></a>
 
-AWS Auto Scaling uses the **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** service\-linked role to manage predictive scaling of Amazon EC2 Auto Scaling groups on your behalf\. This role is predefined with permissions to make the following calls on your behalf: 
+AWS Auto Scaling uses the service\-linked role named **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** to call the following actions on your behalf when you enable predictive scaling:
 + `cloudwatch:GetMetricData`
 + `autoscaling:DescribeAutoScalingGroups`
 + `autoscaling:DescribeScheduledActions`
 + `autoscaling:BatchPutScheduledUpdateGroupAction`
 + `autoscaling:BatchDeleteScheduledAction`
 
-This role trusts the `autoscaling-plans.amazonaws.com` service to assume it\. 
+**AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** trusts the `autoscaling-plans.amazonaws.com` service to assume the role\.
 
 ## Create the service\-linked role \(automatic\)<a name="create-service-linked-role-automatic"></a>
 
-AWS Auto Scaling creates the **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** role for you the first time that you create a scaling plan with predictive scaling enabled\.
+You don't need to manually create the **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** role\. AWS Auto Scaling creates this role for you when you create a scaling plan in your account and enable predictive scaling\.
 
-**Important**  
-Make sure that you have enabled the IAM permissions that allow an IAM entity \(such as a user, group, or role\) to create the service\-linked role\. Otherwise, the automatic creation fails\. For more information, see [Service\-linked role permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#service-linked-role-permissions) in the *IAM User Guide* or the information about [Permissions required to create a service\-linked role](security_iam_id-based-policy-examples.md#aws-auto-scaling-slr-permissions) in this guide\.
+For AWS Auto Scaling to create a service\-linked role on your behalf, you must have the required permissions\. For more information, see [Service\-linked role permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#service-linked-role-permissions) in the *IAM User Guide*\.
 
 ## Create the service\-linked role \(manual\)<a name="create-service-linked-role-manual"></a>
 
-To create the service\-linked role manually, you can use the IAM console, AWS CLI, or IAM API\. For more information, see [Creating a service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#create-service-linked-role) in the *IAM User Guide*\.
+To create the service\-linked role manually, you can use the IAM console, IAM CLI, or IAM API\. For more information, see [Creating a service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#create-service-linked-role) in the *IAM User Guide*\.
 
 **To create a service\-linked role \(AWS CLI\)**  
-Use the following [create\-service\-linked\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/create-service-linked-role.html) CLI command to create the AWS Auto Scaling service\-linked role\.
+Use the following [create\-service\-linked\-role](https://docs.aws.amazon.com/cli/latest/reference/iam/create-service-linked-role.html) CLI command to create the service\-linked role\.
 
 ```
 aws iam create-service-linked-role --aws-service-name autoscaling-plans.amazonaws.com
@@ -40,16 +34,18 @@ aws iam create-service-linked-role --aws-service-name autoscaling-plans.amazonaw
 
 ## Edit the service\-linked role<a name="edit-service-linked-role"></a>
 
-With the **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** role created by AWS Auto Scaling, you can edit only its description and not its permissions\. For more information, see [Editing a service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
+You can edit the description of **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** using IAM\. For more information, see [Editing a service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#edit-service-linked-role) in the *IAM User Guide*\.
 
 ## Delete the service\-linked role<a name="delete-service-linked-role"></a>
 
-If you no longer use scaling plans, we recommend that you delete the service\-linked role\. You can delete a service\-linked role only after first deleting the related AWS resources\. If a service\-linked role is used with multiple scaling plans, you must delete all scaling plans with predictive scaling enabled before you can delete the role\. This protects your scaling plans by preventing you from inadvertently removing the permissions that you need to manage them\. For more information, see [Step 5: Clean up](gs-delete-scaling-plan.md)\.
+If you no longer need to use scaling plans, we recommend that you delete **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling**\. 
 
-You can use IAM to delete the service\-linked role\. For more information, see [Deleting a service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
+You can delete a service\-linked role only after you delete all scaling plans in your AWS account that have predictive scaling enabled\. This ensures that you can't inadvertently remove permissions to access your scaling plans\.
 
-After you delete the **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** service\-linked role, AWS Auto Scaling creates the role again when you create a scaling plan with predictive scaling enabled\. 
+You can use the IAM console, IAM CLI, or IAM API to delete the service\-linked role\. For more information, see [Deleting a service\-linked role](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#delete-service-linked-role) in the *IAM User Guide*\.
 
-## Supported regions for the service\-linked role<a name="slr-regions"></a>
+After you delete the **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** service\-linked role, AWS Auto Scaling creates the role again if you create a scaling plan with predictive scaling enabled\. 
 
-AWS Auto Scaling supports using service\-linked roles in all of the AWS Regions where the service is available\.
+## Supported Regions<a name="slr-regions"></a>
+
+AWS Auto Scaling supports using service\-linked roles in all of the AWS Regions where scaling plans available\. For information about the Regional availability of scaling plans, see [AWS Auto Scaling endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/autoscaling_region.html) in the *AWS General Reference*\.
