@@ -1,10 +1,8 @@
 # Identity\-based policy examples for scaling plans<a name="security_iam_id-based-policy-examples"></a>
 
-By default, a brand new IAM user has no permissions to do anything\. An IAM administrator must create IAM policies that grant users and roles permission to work with scaling plans\. The administrator must then attach those policies to the IAM users or roles that require those permissions\.
+By default, a brand new IAM user has no permissions to do anything\. An IAM administrator must create and assign IAM policies that give an IAM identity \(such as a user or role\) permission to work with scaling plans\.
 
 To learn how to create an IAM policy using these example JSON policy documents, see [Creating policies on the JSON tab](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html#access_policies_create-json-editor) in the *IAM User Guide*\.
-
-If you are new to creating policies, we recommend that you first create an IAM user in your account and attach policies to the user\. You can use the console to verify the effects of each policy as you attach the policy to the user\. 
 
 **Topics**
 + [Policy best practices](#security_iam_service-with-iam-policy-best-practices)
@@ -15,15 +13,18 @@ If you are new to creating policies, we recommend that you first create an IAM u
 
 ## Policy best practices<a name="security_iam_service-with-iam-policy-best-practices"></a>
 
-Identity\-based policies are very powerful\. They determine whether someone can create, access, or delete AWS Auto Scaling resources in your account\. These actions can incur costs for your AWS account\. When you create or edit identity\-based policies, follow these guidelines and recommendations:
-+ **Get started using AWS managed policies** – To start using AWS Auto Scaling quickly, use AWS managed policies to give your employees the permissions they need\. These policies are already available in your account and are maintained and updated by AWS\. For more information, see [Get started using permissions with AWS managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#bp-use-aws-defined-policies) in the *IAM User Guide*\.
-+ **Grant least privilege** – When you create custom policies, grant only the permissions required to perform a task\. Start with a minimum set of permissions and grant additional permissions as necessary\. Doing so is more secure than starting with permissions that are too lenient and then trying to tighten them later\. For more information, see [Grant least privilege](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege) in the *IAM User Guide*\.
-+ **Enable MFA for sensitive operations** – For extra security, require IAM users to use multi\-factor authentication \(MFA\) to access sensitive resources or API operations\. For more information, see [Using multi\-factor authentication \(MFA\) in AWS](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa.html) in the *IAM User Guide*\.
-+ **Use policy conditions for extra security** – To the extent that it's practical, define the conditions under which your identity\-based policies allow access to a resource\. For example, you can write conditions to specify a range of allowable IP addresses that a request must come from\. You can also write conditions to allow requests only within a specified date or time range, or to require the use of SSL or MFA\. For more information, see [IAM JSON policy elements: Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html) in the *IAM User Guide*\.
+Identity\-based policies determine whether someone can create, access, or delete AWS Auto Scaling resources in your account\. These actions can incur costs for your AWS account\. When you create or edit identity\-based policies, follow these guidelines and recommendations:
++ **Get started with AWS managed policies and move toward least\-privilege permissions** – To get started granting permissions to your users and workloads, use the *AWS managed policies* that grant permissions for many common use cases\. They are available in your AWS account\. We recommend that you reduce permissions further by defining AWS customer managed policies that are specific to your use cases\. For more information, see [AWS managed policies](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_managed-vs-inline.html#aws-managed-policies) or [AWS managed policies for job functions](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_job-functions.html) in the *IAM User Guide*\.
++ **Apply least\-privilege permissions** – When you set permissions with IAM policies, grant only the permissions required to perform a task\. You do this by defining the actions that can be taken on specific resources under specific conditions, also known as *least\-privilege permissions*\. For more information about using IAM to apply permissions, see [ Policies and permissions in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html) in the *IAM User Guide*\.
++ **Use conditions in IAM policies to further restrict access** – You can add a condition to your policies to limit access to actions and resources\. For example, you can write a policy condition to specify that all requests must be sent using SSL\. You can also use conditions to grant access to service actions if they are used through a specific AWS service, such as AWS CloudFormation\. For more information, see [ IAM JSON policy elements: Condition](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition.html) in the *IAM User Guide*\.
++ **Use IAM Access Analyzer to validate your IAM policies to ensure secure and functional permissions** – IAM Access Analyzer validates new and existing policies so that the policies adhere to the IAM policy language \(JSON\) and IAM best practices\. IAM Access Analyzer provides more than 100 policy checks and actionable recommendations to help you author secure and functional policies\. For more information, see [IAM Access Analyzer policy validation](https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-policy-validation.html) in the *IAM User Guide*\.
++ **Require multi\-factor authentication \(MFA\)** – If you have a scenario that requires IAM users or a root user in your AWS account, turn on MFA for additional security\. To require MFA when API operations are called, add MFA conditions to your policies\. For more information, see [ Configuring MFA\-protected API access](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_configure-api-require.html) in the *IAM User Guide*\.
+
+For more information about best practices in IAM, see [Security best practices in IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html) in the *IAM User Guide*\.
 
 ## Allow users to create scaling plans<a name="example-policies-scaling-plans"></a>
 
- The following shows an example of a permissions policy that allows users to create scaling plans\. 
+The following shows an example of an identity\-based policy that grants permissions to create scaling plans\. 
 
 ```
 {
@@ -44,7 +45,7 @@ Identity\-based policies are very powerful\. They determine whether someone can 
 }
 ```
 
-For a user to work with a scaling plan, that user must have additional permissions that allow them to work with specific resources in their account\. These permissions are listed in [Additional required permissions](#aws-auto-scaling-additional-permissions)\.
+To work with a scaling plan, end users must have additional permissions that allow them to work with specific resources in their account\. These permissions are listed in [Additional required permissions](#aws-auto-scaling-additional-permissions)\.
 
 Each console user also needs permissions that allow them to discover the scalable resources in their account and to view graphs of CloudWatch metric data from the AWS Auto Scaling console\. The additional set of permissions required to work with the AWS Auto Scaling console is listed below: 
 + `cloudformation:ListStacks`: To list stacks\.
@@ -55,7 +56,7 @@ Each console user also needs permissions that allow them to discover the scalabl
 
 ## Allow users to enable predictive scaling<a name="example-policies-predictive-scaling"></a>
 
-The following shows an example of a permissions policy that allows users to enable predictive scaling\. These permissions extend the features of scaling plans that are set up to scale Auto Scaling groups\. 
+The following shows an example of an identity\-based policy that grants permissions to enable predictive scaling\. These permissions extend the features of scaling plans that are set up to scale Auto Scaling groups\. 
 
 ```
 {
@@ -78,7 +79,7 @@ The following shows an example of a permissions policy that allows users to enab
 
 ## Additional required permissions<a name="aws-auto-scaling-additional-permissions"></a>
 
-When granting permissions for scaling plans, you must decide which resources users get permissions for\. Depending on which scenarios you want to support, you can specify the following actions in the `Action` element of an IAM policy statement\. 
+To successfully configure scaling plans, end users must be granted permissions for each target service for which they will configure scaling\. To grant the minimum permissions required to work with target services, read the information in this section and specify the relevant actions in the `Action` element of an IAM policy statement\. 
 
 **Auto Scaling groups**
 
@@ -150,7 +151,7 @@ For automatic role creation to succeed, users must have permissions for the `iam
 "Action": "iam:CreateServiceLinkedRole"
 ```
 
-The following shows an example of a permissions policy that allows a user to create a service\-linked role\. 
+The following shows an example of an identity\-based policy that grants permissions to create a service\-linked role\. 
 
 ```
 {

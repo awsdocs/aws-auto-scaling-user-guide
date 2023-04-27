@@ -4,20 +4,20 @@
 *****Copyright &copy; Amazon Web Services, Inc. and/or its affiliates. All rights reserved.*****
 
 -----
-Amazon's trademarks and trade dress may not be used in 
-     connection with any product or service that is not Amazon's, 
-     in any manner that is likely to cause confusion among customers, 
-     or in any manner that disparages or discredits Amazon. All other 
-     trademarks not owned by Amazon are the property of their respective
-     owners, who may or may not be affiliated with, connected to, or 
-     sponsored by Amazon.
+Amazon's trademarks and trade dress may not be used in
+connection with any product or service that is not Amazon's,
+in any manner that is likely to cause confusion among customers,
+or in any manner that disparages or discredits Amazon. All other
+trademarks not owned by Amazon are the property of their respective
+owners, who may or may not be affiliated with, connected to, or
+sponsored by Amazon.
 
 -----
 ## Contents
 + [What is a scaling plan?](what-is-a-scaling-plan.md)
 + [How scaling plans work](how-it-works.md)
-+ [Best practices for scaling plans](best-practices.md)
-+ [Getting started with scaling plans](getting-started.md)
++ [Best practices for scaling plans](best-practices-for-scaling-plans.md)
++ [Getting started with scaling plans](getting-started-with-scaling-plans.md)
    + [Step 1: Find your scalable resources](gs-select-application.md)
    + [Step 2: Specify the scaling strategy](gs-configure-scaling-plan.md)
    + [Step 3: Configure advanced settings (optional)](gs-specify-custom-settings.md)

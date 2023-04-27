@@ -1,4 +1,4 @@
-# Getting started with scaling plans<a name="getting-started"></a>
+# Getting started with scaling plans<a name="getting-started-with-scaling-plans"></a>
 
 Before you create a scaling plan for use with your application, review your application thoroughly as it runs in the AWS Cloud\. Take note of the following:
 + Whether you have existing scaling policies created from other consoles\. You can replace the existing scaling policies, or you can keep them \(without being allowed to make any changes to their values\) when you create your scaling plan\.

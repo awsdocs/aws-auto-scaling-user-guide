@@ -26,16 +26,18 @@ If you have been using scaling plans only for configuring predictive scaling for
 
 Use the following resources to help you create and use a scaling plan:
 + [How scaling plans work](how-it-works.md)
-+ [Best practices for scaling plans](best-practices.md)
-+ [Getting started with scaling plans](getting-started.md)
++ [Best practices for scaling plans](best-practices-for-scaling-plans.md)
++ [Getting started with scaling plans](getting-started-with-scaling-plans.md)
 
 ## Work with scaling plans<a name="scaling-plan-interfaces"></a>
 
 You can create, access, and manage your scaling plans using any of the following interfaces:
-+ **AWS Management Console** – Provides a web interface that you can use to access your scaling plans\.
-+ **AWS Command Line Interface \(AWS CLI\)** – Provides commands for a broad set of AWS services, and is supported on Windows, macOS, and Linux\. For more information, see [AWS Command Line Interface](http://aws.amazon.com/cli/)\.
++ **AWS Management Console** – Provides a web interface that you can use to access your scaling plans\. If you've signed up for an AWS account, you can access your scaling plans by signing into the AWS Management Console, using the search box on the navigation bar to search for **AWS Auto Scaling**, and then choosing **AWS Auto Scaling**\.
++ **AWS Command Line Interface \(AWS CLI\)** – Provides commands for a broad set of AWS services, and is supported on Windows, macOS, and Linux\. To get started, see [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/)\. For more information, see [autoscaling\-plans](https://docs.aws.amazon.com/cli/latest/reference/autoscaling-plans/index.html) in the *AWS CLI Command Reference*\.
++ **AWS Tools for Windows PowerShell** – Provides commands for a broad set of AWS products for those who script in the PowerShell environment\. To get started, see the [AWS Tools for Windows PowerShell User Guide](https://docs.aws.amazon.com/powershell/latest/userguide/)\. For more information, see the [AWS Tools for PowerShell Cmdlet Reference](https://docs.aws.amazon.com/powershell/latest/reference/Index.html)\.
 + **AWS SDKs** – Provides language\-specific API operations and takes care of many of the connection details, such as calculating signatures, handling request retries, and handling errors\. For more information, see [AWS SDKs](http://aws.amazon.com/tools/#SDKs)\.
 + **Query API** – Provides low\-level API actions that you call using HTTPS requests\. Using the Query API is the most direct way to access AWS services\. However, it requires your application to handle low\-level details such as generating the hash to sign the request, and handling errors\. For more information, see the [AWS Auto Scaling API Reference](https://docs.aws.amazon.com/autoscaling/plans/APIReference/)\.
++ **AWS CloudFormation** – Supports creating scaling plans using CloudFormation templates\. For more information, see the [AWS::AutoScalingPlans::ScalingPlan](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html) reference in the *AWS CloudFormation User Guide*\.
 
 To connect programmatically to an AWS service, you use an endpoint\. For information about endpoints for calls to AWS Auto Scaling, see [AWS Auto Scaling endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/autoscaling_region.html) in the *AWS General Reference*\. This page also shows the Regional availability of scaling plans\.
 

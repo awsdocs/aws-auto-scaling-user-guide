@@ -1,4 +1,4 @@
-# Best practices for scaling plans<a name="best-practices"></a>
+# Best practices for scaling plans<a name="best-practices-for-scaling-plans"></a>
 
 The following best practices can help you make the most of scaling plans:
 + When you create a launch template or launch configuration, enable detailed monitoring to get CloudWatch metric data for EC2 instances at a one\-minute frequency because that ensures a faster response to load changes\. Scaling on metrics with a five\-minute frequency can result in a slower response time and scaling on stale metric data\. By default, EC2 instances are enabled for basic monitoring, which means metric data for instances is available at five\-minute intervals\. For an additional charge, you can enable detailed monitoring to get metric data for instances at a one\-minute frequency\. For more information, see [Configure monitoring for Auto Scaling instances](https://docs.aws.amazon.com/autoscaling/ec2/userguide/enable-as-instance-metrics.html) in the *Amazon EC2 Auto Scaling User Guide*\.

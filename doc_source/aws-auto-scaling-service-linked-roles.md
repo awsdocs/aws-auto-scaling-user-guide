@@ -17,9 +17,9 @@ AWS Auto Scaling uses the service\-linked role named **AWSServiceRoleForAutoScal
 
 ## Create the service\-linked role \(automatic\)<a name="create-service-linked-role-automatic"></a>
 
-You don't need to manually create the **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** role\. AWS Auto Scaling creates this role for you when you create a scaling plan in your account and enable predictive scaling\.
+You don't need to manually create the **AWSServiceRoleForAutoScalingPlans\_EC2AutoScaling** role\. AWS creates this role for you when you create a scaling plan in your account and enable predictive scaling\.
 
-For AWS Auto Scaling to create a service\-linked role on your behalf, you must have the required permissions\. For more information, see [Service\-linked role permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#service-linked-role-permissions) in the *IAM User Guide*\.
+For AWS to create a service\-linked role on your behalf, you must have the required permissions\. For more information, see [Service\-linked role permissions](https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html#service-linked-role-permissions) in the *IAM User Guide*\.
 
 ## Create the service\-linked role \(manual\)<a name="create-service-linked-role-manual"></a>
 

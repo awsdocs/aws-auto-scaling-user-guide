@@ -71,7 +71,7 @@ Scaling plans do not support Access Control Lists \(ACLs\)\.
 
 Scaling plans cannot be tagged\. They also have no service\-defined resources that can be tagged\. Therefore, they do not support controlling access based on tags on a resource\.
 
-Scaling plans may contain taggable resources, such as Auto Scaling groups, that support controlling access based on tags\. For more information, see the IAM documentation for that AWS service\. 
+Scaling plans may contain taggable resources, such as Auto Scaling groups, that support controlling access based on tags\. For more information, see the documentation for that AWS service\. 
 
 ## IAM roles<a name="security_iam_service-with-iam-roles"></a>
 

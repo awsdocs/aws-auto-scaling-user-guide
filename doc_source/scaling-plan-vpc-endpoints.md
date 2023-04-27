@@ -1,21 +1,27 @@
 # Scaling plans and interface VPC endpoints \(AWS PrivateLink\)<a name="scaling-plan-vpc-endpoints"></a>
 
-You can establish a private connection between your scaling plans and other AWS services and endpoint services by creating an interface VPC endpoint\. You can use this connection to call the AWS Auto Scaling API from your VPC without sending traffic over the internet\. The endpoint provides reliable, scalable connectivity to the AWS Auto Scaling API\. It does this without requiring an internet gateway, NAT instance, or VPN connection\. 
+You can improve the security posture of your VPC by configuring AWS Auto Scaling to use an interface VPC endpoint\. Interface endpoints are powered by AWS PrivateLink, a technology that enables you to privately access AWS Auto Scaling APIs by restricting all network traffic between your VPC and AWS Auto Scaling to the AWS network\. With interface endpoints, you also don't need an internet gateway, a NAT device, or a virtual private gateway\.
 
-Interface VPC endpoints are powered by AWS PrivateLink, a feature that enables private communication between AWS services using private IP addresses\. For more information, see [AWS PrivateLink](http://aws.amazon.com/privatelink)\.
+You are not required to configure AWS PrivateLink, but it's recommended\. For more information about AWS PrivateLink and VPC endpoints, see [What is AWS PrivateLink?](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html) in the *AWS PrivateLink Guide*\.
 
-## Create an interface VPC endpoint for scaling plans<a name="create-vpce-aws-as-api"></a>
+**Topics**
++ [Create an interface VPC endpoint for scaling plans](#create-vpce-scaling-plans)
++ [Create a VPC endpoint policy for scaling plans](#create-vpce-policy-scaling-plans)
++ [Endpoint migration](#upgrading-cli-sdk-aws-as-api)
 
-You can create a VPC endpoint for AWS Auto Scaling \(scaling plans\) using either the Amazon VPC console or the AWS Command Line Interface \(AWS CLI\)\. Create an endpoint for AWS Auto Scaling using the following service name:
-+ **com\.amazonaws\.*region*\.autoscaling\-plans** — Creates an endpoint for the AWS Auto Scaling API operations\.
+## Create an interface VPC endpoint for scaling plans<a name="create-vpce-scaling-plans"></a>
 
-For more information, see [Creating an interface endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#create-interface-endpoint) in the *Amazon VPC User Guide*\. 
+Create an endpoint for AWS Auto Scaling scaling plans using the following service name:
 
-Enable private DNS for the endpoint to make API requests to the supported service using its default DNS hostname \(for example, `autoscaling-plans.us-east-1.amazonaws.com`\)\. When creating an endpoint for AWS services, this setting is enabled by default\. For more information, see [Accessing a service through an interface endpoint](https://docs.aws.amazon.com/vpc/latest/userguide/vpce-interface.html#access-service-though-endpoint) in the *Amazon VPC User Guide*\. 
+```
+com.amazonaws.region.autoscaling-plans
+```
 
-You do not need to change any AWS Auto Scaling settings\. AWS Auto Scaling API calls other AWS services using either service endpoints or private interface VPC endpoints, whichever are in use\. 
+For more information, see [Access an AWS service using an interface VPC endpoint](https://docs.aws.amazon.com/vpc/latest/privatelink/create-interface-endpoint.html) in the *AWS PrivateLink Guide*\.
 
-## Create a VPC endpoint policy for scaling plans<a name="create-vpce-policy-aws-as-api"></a>
+You do not need to change any other settings\. AWS Auto Scaling API calls other AWS services using either service endpoints or private interface VPC endpoints, whichever are in use\. 
+
+## Create a VPC endpoint policy for scaling plans<a name="create-vpce-policy-scaling-plans"></a>
 
 You can attach a policy to your VPC endpoint to control access to the AWS Auto Scaling API\. The policy specifies:
 + The principal that can perform actions\.
@@ -43,7 +49,7 @@ The following example shows a VPC endpoint policy that denies everyone permissio
 }
 ```
 
-For more information, see [Using VPC endpoint policies](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-access.html#vpc-endpoint-policies) in the *Amazon VPC User Guide*\.
+For more information, see [VPC endpoint policies](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints-access.html#vpc-endpoint-policies) in the *AWS PrivateLink Guide*\.
 
 ## Endpoint migration<a name="upgrading-cli-sdk-aws-as-api"></a>
 
